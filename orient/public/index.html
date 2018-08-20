@@ -11,70 +11,38 @@
 <body>
 
 <link href="lol.css" rel="stylesheet" type="text/css">
-<p>Your time: <span id="time">0</span>s</p>
+<br>
+<br>
+<br>
+<br>
+<br>
+<center>
+<p>Your time:</p>
+<div id="time"></div>
+  <br>
+  <br>
+  <br>
 <div id="box"></div>
-<p>&nbsp;</p>
+</center>
 
 
 <script type="text/javascript">
-    function getRandomColor() {
-        const letters = '0123456789ABCDEF'.split('');
-        const color = '#';
-        for (let i = 0; i < 6; i++ ) {
-            this.color += letters[Math.round(Math.random() * 15)];
-        }
-        return color;
-    }
     //make box disappear and reapper after random time
     //when user clicks, box disappears
     //then reappears again until user clicks again
-
-    function setCanvasSize() {
-        // Устанавливаем нужные параметры высоты и ширины для канваса
-        const canvas = renderer.view;
-        canvas.width = window.innerWidth * 2;
-        canvas.height = window.innerHeight * 2;
-        canvas.style.width = window.innerWidth + 'px';
-        canvas.style.height = window.innerHeight + 'px';
-        renderer.resize(window.innerWidth, window.innerHeight);
-
-    }
-
-    window.onresize = (ev) => {
-        setCanvasSize();
-    };
 
     let clickedTime;
     let createdTime;
     let reactionTime;
     function makeBox() {
-        let time=Math.random();
-        time=time*5000;
         setTimeout(function() {
-            if (Math.random()>0.5) {
-                document.getElementById("box").style.borderRadius="100px";
-            }
-            else {
-                document.getElementById("box").style.borderRadius="0";
-            }
-
+            document.getElementById("box").style.borderRadius="50px";
             document.getElementById("box").style.top=window.innerHeight/2;
             document.getElementById("box").style.left=window.innerWidth/2;
-            document.getElementById("box").style.backgroundColor=getRandomColor();
             document.getElementById("box").style.display="block";
             createdTime=Date.now();
         }, time);
     }
-    const keys = {"space": false};
-
-    document.addEventListener('keydown', (ev) => {
-        keys[ev.key] = true;
-    }, false);
-
-    document.addEventListener('keyup', (ev) => {
-        keys[ev.key] = false;
-    }, false);
-
 
     document.getElementById("box").onclick=function() {
         clickedTime=Date.now();

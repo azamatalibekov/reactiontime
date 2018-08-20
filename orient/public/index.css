@@ -5,6 +5,13 @@ h1 {
     text-align: center;
 }
 
+h2 {
+    font-size: 35px;
+    font-family: "Raleway", sans-serif;
+    color: #ffffff;
+    text-align: center;
+}
+
 body{
     background: rgba(33, 75, 111, 0.45);
 }
@@ -32,19 +39,4 @@ body {margin:0;}
 .navbar a:hover {
     background: #ddd;
     color: white;
-}
-
-#topcontainer {
-
-    width: 100%;
-    height: 150px;
-}
-
-#shape {
-
-    width: 200px;
-    height: 200px;
-    background-color: #333333;
-    display: none;
-    position: relative;
 }
