@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <head lang="en">
   <head>
-
     <meta charset="UTF-8">
     <title>orient</title>
-
     <link rel="stylesheet" type="text/css" href="index.css" media="screen"/>
   </head>
+
   <div class="navbar">
-    <!--<h1>ORIENT</h1>-->
     <img src="logo%20wh.png" width="10%" height="10%">
   </div>
 <body>
@@ -20,7 +18,6 @@
 <br>
 <br>
 <center>
-  <!--<p>Your time:</p>-->
   <div id="time"></div><p>sec</p>
   <br>
   <br>
@@ -30,17 +27,9 @@
 
 
 <script type="text/javascript">
-    // import swal from 'sweetalert2/dist/sweetalert2.js'
-    // import 'sweetalert2/src/sweetalert2.scss'
-    //make box disappear and reapper after random time
-    //when user clicks, box disappears
-    //then reappears again until user clicks again
     let clickedTime;
     let createdTime;
     let reactionTime;
-    let pyTime = 0;
-    let cppTime = 0;
-    let hTime = 0;
     let count = 0;
     let hp = 0;
     let Pynum = [];
@@ -49,11 +38,12 @@
     let Fronum = [];
     let Backnum = [];
     this.state = {
-        Python: ['Django', 'Python', 'Dictionary', 'PyCharm', 'def __init__(self, city, pin):', 'object.__add__(self, other)', 'if a: pass'],
-        Haskell: ['Haskell', 'λ', 'has :: (Eq a) => [a] -> a -> Bool', 'takeWhile', 'zip', 'GHCi', 'Монады'],
-        Cpp: ['queue', 'vector', 'set', 'map', 'Идентификаторы', 'long double', 'iostream'],
         Frontend: ['http', 'singletone', 'OSI', 'полиморфизм', 'инкапсуляция', 'TCP', 'react'],
+        Python: ['Django', 'Python', 'Dictionary', 'PyCharm', 'def __init__(self, city, pin):', 'object.__add__(self, other)', 'if a: pass'],
         Backend: ['server', 'p2p', 'port', 'БД', 'ORM', 'POST', 'nginx'],
+        Haskell: ['Haskell', 'λ', 'has :: (Eq a) => [a] -> a -> Bool', 'takeWhile', 'zip', 'GHCi', 'Монады'],
+        Cpp: ['queue', 'vector', 'set', 'map', 'Идентификаторы', 'long double', 'iostream']
+
     };
 
 
@@ -64,27 +54,28 @@
         let choice3 = Math.abs(Math.round(Math.random() * this.state.Cpp.length) - 1);
         let choice4 = Math.abs(Math.round(Math.random() * this.state.Frontend.length) - 1);
         let choice5 = Math.abs(Math.round(Math.random() * this.state.Backend.length) - 1);
-        if (Math.random() * 5 <= 1) {
+        let rand = Math.floor(Math.random() * 5);
+        if (rand === 0) {
             hp = 1;
             return this.state.Python[choice1];
 
         }
-        else if (Math.random() * 5 <= 2) {
+        else if (rand === 1) {
             hp = 2;
             return this.state.Haskell[choice2];
 
         }
-        else if (Math.random() * 5 <= 3){
+        else if (rand === 2){
             hp = 3;
             return this.state.Cpp[choice3];
 
         }
-        else if (Math.random() * 5 <= 4)
+        else if (rand === 3)
         {
             hp = 4;
             return this.state.Frontend[choice4];
         }
-        else //if (Math.random() * 5 <= 5)
+        else if (rand === 4)
         {
           hp = 5;
           return this.state.Backend[choice5];
@@ -106,7 +97,7 @@
     document.addEventListener("keydown", (x) => {
         const Name = x.key;
         if (Name === 'w' || Name === 'q' || Name === 'e' || Name === 'a' || Name === 's' || Name === 'd' || Name === 'r'
-            || Name === 'f' || Name === 'g' || Name === 't' || Name === 'z' || Name === 'x' || Name === 'c' || Name === 'VK_SPACE')
+            || Name === 'f' || Name === 'g' || Name === 't' || Name === 'z' || Name === 'x' || Name === 'c')
         {
             clickedTime=Date.now();
             reactionTime=(clickedTime-createdTime)/1000;
@@ -122,7 +113,7 @@
                 Backnum.push(reactionTime);
             count++;
             if (count === 50)
-                alert("Test ended, thank you.");
+                alert("TEST IS COMPLETE - THANK YOU");
 
             if (count === 51) {
                 count = 0;
@@ -131,37 +122,14 @@
                 Hanum = [];
             }
             document.getElementById("time").innerHTML=reactionTime;
-// this.style.display="none";
             makeBox();
             document.addEventListener("keyup", ()=> {
                 return null;
             }, false);
         }
 
-
     }, false);
 
-    document.getElementById("results").onclick=function() {
-        clickedTime=Date.now();
-        reactionTime=(clickedTime-createdTime)/1000;
-        if (hp === 1)
-          Pynum.push(reactionTime);
-        else if (hp === 2)
-           Hanum.push(reactionTime);
-        else if (hp === 3)
-            Cppnum.push(reactionTime);
-        else if (hp === 4)
-            Fronum.push(reactionTime);
-        else if (hp === 5)
-            Backnum.push(reactionTime);
-        count++;
-        if (count >= 30)
-            alert("lel")
-            // swal('Hello world!');
-        document.getElementById("time").innerHTML=reactionTime;
-        this.style.display="none";
-        makeBox();
-    };
     makeBox();
 </script>
 </body>

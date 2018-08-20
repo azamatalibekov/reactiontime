@@ -5,6 +5,7 @@ h1 {
     text-align: center;
 }
 
+
 h2 {
     font-size: 35px;
     font-family: "Raleway", sans-serif;
@@ -12,13 +13,16 @@ h2 {
     text-align: center;
 }
 
-body{
+
+body {
     background: linear-gradient(to right, #34e89e, #0f3443);
 }
+
 
 body {
     margin:0;
 }
+
 
 .navbar {
     overflow: hidden;
@@ -27,6 +31,7 @@ body {
     top: 0;
     width: 100%;
 }
+
 
 .navbar a {
     float: left;
@@ -37,6 +42,7 @@ body {
     text-decoration: none;
     font-size: 17px;
 }
+
 
 .navbar a:hover {
     background: #ddd;

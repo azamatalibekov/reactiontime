@@ -4,21 +4,11 @@ body {
 }
 
 
-
-/*#box{*/
-    /*width:200px;*/
-    /*height:200px;*/
-    /*background-color: #95a7ff;*/
-    /*display:none;*/
-    /*position:relative;*/
-    /*text-align: center;*/
-/*}*/
-
 #results{
     border: 3px solid #333;
     background-color: #2c3e50;
     width: 50%;
-    font-family: Raleway;
+    font-family: Raleway, sans-serif;
     font-weight: lighter;
     color: #ffffff;
     display:none;
@@ -26,14 +16,18 @@ body {
     text-align: center;
     font-size: 50px;
 }
-#time{
-    font-family: "Avenir Next";
+
+
+#time {
+    font-family: "Avenir Next", sans-serif;
     font-weight: lighter;
     font-size: 30px;
     color: #ffffff;
 }
-p{
-    font-family: "Avenir Next";
+
+
+p {
+    font-family: "Avenir Next", sans-serif;
     font-weight: lighter;
     font-size: 30px;
     color: #ffffff;
